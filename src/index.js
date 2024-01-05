@@ -18,7 +18,7 @@ document.querySelector('#content').appendChild(Footer());
 
 function header(){
     const header = document.createElement('header');
-    header.classList.add('w-full','h-36', 'bg-red-400', 'flex', 'flex-col', 'items-center', 'pt-4', 'sticky', 'top-0');
+    header.classList.add('w-full','h-[15vh]', 'bg-red-400', 'flex', 'flex-col', 'items-center', 'py-4', 'sticky', 'top-0');
 
     const h1 = document.createElement('h1');
     h1.classList.add('text-4xl', 'font-semibold', 'pb-8', 'text-center', 'max-md:text-2xl');

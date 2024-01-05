@@ -1,31 +1,40 @@
-export function AboutPage() {
+export function AboutPage(){
     const main = document.createElement('main');
-    main.classList.add('relative', "bg-[url('./assets/store.jpg')]", 'w-full', 'h-full', 'bg-cover' , 'flex-grow' , 'overflow-y-auto');
-
-    const overlay = document.createElement('div');
-    overlay.classList.add('absolute', 'inset-0', 'bg-gradient-to-tr', 'from-gray-800', 'to-blue-900' , 'opacity-60');
-
-    main.appendChild(overlay);
-
+    main.classList.add(
+        'w-full','bg-blue-500' , 'flex-grow' , 'min-h[80vh]','flex','flex-col','items-center','max-md:space-y-4','space-y-8'
+        );
 
     const contact = document.createElement('div');
-    contact.classList.add('mt-20','flex', 'flex-col', 'items-center', 'space-y-8', 'z-10', 'relative');
+    contact.classList.add('mt-0','flex', 'flex-col', 'items-center', 'space-y-8', 'z-10', 'relative');
 
     const contactUs = document.createElement('h3');
     contactUs.classList.add('text-4xl', 'text-center','text-white' , 'font-semibold', 'pt-8');
     contactUs.textContent = 'Contact Us';
 
     const contact_ul = document.createElement('ul');
-    contact_ul.classList.add('flex', 'flex-col', 'items-left', 'space-y-4','text-2xl', 'text-white', 'font-semibold', 'list-disc', 'max-md:text-md' , 'max-md:space-y-2' , 'max-md:items-center' , 'max-md:text-md' , 'max-md:px-8');
+    contact_ul.classList.add(
+        'flex', 'flex-col', 'items-left', 'space-y-4','text-2xl', 'text-white', 'font-semibold','list-disc',
+        'max-md:text-md' , 'max-md:space-y-2'  , 'max-md:px-8'
+        );
+
+    let breakline = '';
+
+    if (window.innerWidth < 768) {
+        breakline = '<br>';
+        console.log('breakline');
+    } else{
+        breakline = '';
+
+    }
 
     const contact_li1 = document.createElement('li');
-    contact_li1.textContent = 'Phone: 123-456-7890';
+    contact_li1.innerHTML = `Phone: ${breakline} 123-456-7890`;
 
     const contact_li2 = document.createElement('li');
-    contact_li2.textContent = 'Email: info@lospollosgrill.com';
+    contact_li2.innerHTML = `Email: ${breakline} info@lospollosgrill.com`;
 
     const contact_li3 = document.createElement('li');
-    contact_li3.textContent = 'Address: 1234 Los Pollos Hermanos Way, Albuquerque, NM 87104';
+    contact_li3.innerHTML = `Address: ${breakline} 1234 Los Pollos Hermanos Way, Albuquerque, NM 87104`;
 
     contact_ul.appendChild(contact_li1);
     contact_ul.appendChild(contact_li2);
@@ -37,7 +46,7 @@ export function AboutPage() {
     main.appendChild(contact);
 
     const hrs = document.createElement('div');
-    hrs.classList.add('mt-20','flex', 'flex-col', 'items-center', 'space-y-8', 'z-10', 'relative');
+    hrs.classList.add('flex', 'flex-col', 'items-center', 'space-y-8', 'z-10', 'relative');
 
     const workingHours = document.createElement('h3');
     workingHours.classList.add('text-4xl', 'text-center','text-white' , 'font-semibold', 'pt-8');
@@ -60,7 +69,6 @@ export function AboutPage() {
 
     main.appendChild(hrs);
 
-
-
     return main;
+
 }

@@ -1,6 +1,9 @@
 export function Footer() {
     const footer = document.createElement('footer');
-    footer.classList.add('w-full', 'h-10', 'bg-blue-900', 'flex', 'flex-row', 'items-center', 'justify-center', 'absolute', 'sticky' , 'bottom-0');
+    footer.classList.add(
+        'w-full', 'min-h-[5vh]', 'py-1' ,'bg-blue-900',
+    'flex', 'flex-row', 'items-center', 'justify-center', 'absolute', 'sticky' , 'bottom-0'
+    );
 
     const link = document.createElement('a');
     link.href = 'https://github.com/MohamedAbdel-Azeem/My-Restaurant';

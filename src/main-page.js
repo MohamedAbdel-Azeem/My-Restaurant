@@ -1,7 +1,7 @@
 export function MainPage() {
     // Main Tag
     const main = document.createElement('main');
-    main.classList.add('w-full','bg-blue-500');
+    main.classList.add('w-full','bg-blue-500' , 'h-[65%]');
     
     // First Div
     const quoteDiv = document.createElement('div');
