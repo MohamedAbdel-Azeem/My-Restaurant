@@ -813,6 +813,14 @@ video {
   background-size: cover;
 }
 
+.bg-contain {
+  background-size: contain;
+}
+
+.bg-center {
+  background-position: center;
+}
+
 .px-6 {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
