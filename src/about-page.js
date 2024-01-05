@@ -1,8 +1,15 @@
 export function AboutPage(){
     const main = document.createElement('main');
     main.classList.add(
-        'w-full','bg-blue-500' , 'flex-grow' , 'min-h[80vh]','flex','flex-col','items-center','max-md:space-y-4','space-y-8'
-        );
+        'w-full', 'flex-grow',
+        'min-h[80vh]', 'flex', 'flex-col', 'items-center', 'max-md:space-y-4', 'space-y-8',
+        'relative', "bg-[url('./assets/store.jpg')]",'bg-cover',
+    );
+    main.style = 'background-repeat: no-repeat;';
+    const overlay = document.createElement('div');
+    overlay.classList.add('absolute', 'inset-0', 'bg-gradient-to-tr', 'from-gray-800', 'to-blue-900' , 'opacity-60');
+
+    main.appendChild(overlay);
 
     const contact = document.createElement('div');
     contact.classList.add('mt-0','flex', 'flex-col', 'items-center', 'space-y-8', 'z-10', 'relative');
