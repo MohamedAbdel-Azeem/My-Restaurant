@@ -1,4 +1,13 @@
-let currentPage = 'Home';
+import { MainPage } from './main-page.js';
+import { Footer } from './footer.js';
+
+let currentPageName = 'Home';
+
+let pages = {
+    'Home': MainPage(),
+}
+
+let currentPage = pages['Home'];
 
 
 function header(){
@@ -54,8 +63,10 @@ function header(){
         const li = ul.children[i];
         const button = li.children[0];
         button.addEventListener('click', function() {
-            const currentPage = this.textContent;
-    
+            const currentPageName = this.textContent;
+            
+            currentPage = pages[currentPageName];
+
             // Remove underline from all buttons
             for (let j = 0; j < ul.children.length; j++) {
                 const otherButton = ul.children[j].children[0];
@@ -75,30 +86,7 @@ function header(){
     return header;
 }
 
-function Footer() {
-    const footer = document.createElement('footer');
-    footer.classList.add('w-full', 'h-10', 'bg-blue-900', 'flex', 'flex-row', 'items-center', 'justify-center', 'absolute', 'sticky' , 'bottom-0');
-
-    const link = document.createElement('a');
-    link.href = 'https://github.com/MohamedAbdel-Azeem/My-Restaurant';
-    link.classList.add('text-slate-100', 'font-mono', 'flex', 'flex-row', 'space-x-5');
-
-    const text = document.createElement('p');
-    text.textContent = 'Made by Mohamed-Abdelazeem';
-
-    const image = document.createElement('img');
-    image.src = './assets/github-logo.png';
-    image.height = 20;
-    image.width = 20;
-
-    link.appendChild(text);
-    link.appendChild(image);
-
-    footer.appendChild(link);
-
-    return footer;
-}
-
 
 document.querySelector('#content').appendChild(header());
+document.querySelector('#content').appendChild(currentPage);
 document.querySelector('#content').appendChild(Footer());
