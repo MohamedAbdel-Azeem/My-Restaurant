@@ -1,13 +1,19 @@
 import { MainPage } from './main-page.js';
 import { Footer } from './footer.js';
+import { AboutPage } from './about-page.js';
 
 let currentPageName = 'Home';
 
 let pages = {
     'Home': MainPage(),
+    'About': AboutPage(),
 }
 
 let currentPage = pages['Home'];
+
+document.querySelector('#content').appendChild(header());
+document.querySelector('#content').appendChild(currentPage);
+document.querySelector('#content').appendChild(Footer());
 
 
 function header(){
@@ -30,7 +36,6 @@ function header(){
     homeButton.type = 'button';
     homeButton.classList.add('btn');
     homeButton.textContent = 'Home';
-    homeButton.onclick = () => changePage('Home');
     homeButton.classList.add('text-slate-100', 'underline' , 'font-bold' , 'underline-offset-4');
     homeLi.appendChild(homeButton);
 
@@ -40,7 +45,6 @@ function header(){
     menuButton.type = 'button';
     menuButton.classList.add('btn');
     menuButton.textContent = 'Menu';
-    menuButton.onclick = () => changePage('Menu');
     menuLi.appendChild(menuButton);
 
     const aboutLi = document.createElement('li');
@@ -49,7 +53,6 @@ function header(){
     aboutButton.type = 'button';
     aboutButton.classList.add('btn');
     aboutButton.textContent = 'About';
-    aboutButton.onclick = () => changePage('About');
     aboutLi.appendChild(aboutButton);
 
 
@@ -63,9 +66,11 @@ function header(){
         const li = ul.children[i];
         const button = li.children[0];
         button.addEventListener('click', function() {
-            const currentPageName = this.textContent;
-            
+            currentPageName = this.textContent;
             currentPage = pages[currentPageName];
+            
+            document.querySelector('#content').removeChild(document.querySelector('#content').children[1]);
+            document.querySelector('#content').insertBefore(currentPage, document.querySelector('#content').children[1]);
 
             // Remove underline from all buttons
             for (let j = 0; j < ul.children.length; j++) {
@@ -86,7 +91,3 @@ function header(){
     return header;
 }
 
-
-document.querySelector('#content').appendChild(header());
-document.querySelector('#content').appendChild(currentPage);
-document.querySelector('#content').appendChild(Footer());
