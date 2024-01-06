@@ -1,12 +1,14 @@
 import { MainPage } from './main-page.js';
 import { Footer } from './footer.js';
 import { AboutPage } from './about-page.js';
+import { MenuPage } from './menu-page.js';
 
 let currentPageName = 'Home';
 
 let pages = {
     'Home': MainPage(),
     'About': AboutPage(),
+    'Menu': MenuPage()
 }
 
 let currentPage = pages['Home'];
