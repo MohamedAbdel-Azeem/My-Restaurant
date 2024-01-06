@@ -20,14 +20,14 @@ document.querySelector('#content').appendChild(Footer());
 
 function header(){
     const header = document.createElement('header');
-    header.classList.add('w-full','h-[15vh]', 'bg-red-400', 'flex', 'flex-col', 'items-center', 'py-4', 'sticky', 'top-0');
+    header.classList.add('w-full','h-[15vh]', 'bg-red-400', 'flex', 'flex-col', 'items-center', 'py-2', 'sticky', 'top-0');
 
     const h1 = document.createElement('h1');
     h1.classList.add('text-4xl', 'font-semibold', 'pb-8', 'text-center', 'max-md:text-2xl');
     h1.textContent = 'Los Pollos Hermanos Grill';
 
     const nav = document.createElement('nav');
-    
+    nav.classList.add('w-full', 'flex','pb-8', 'justify-center', 'items-center', 'max-md:justify-between', 'max-md:px-8');
 
     const ul = document.createElement('ul');
     ul.classList.add('flex', 'flex-row', 'space-x-24');
