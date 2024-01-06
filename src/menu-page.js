@@ -18,17 +18,17 @@ export function MenuPage() {
             'pText': "A burger that breaks bad with bold flavors: blue cheese, secret sauce, and a touch of culinary rebellion."
         },
         {
-            'imgSrc': './assets/fried-chicken.jpg',
-            'headingText': "Gus's Gusto Chicken",
-            'pText': "Our signature fried chicken, inspired by Gus Fring's dedication to perfection. It's a taste you won't forget."
+            'imgSrc': './assets/tacos.jpg',
+            'headingText': "Saul's Special Tacos",
+            'pText': "Tacos that speak volumes, seasoned with wit and served with a side of legal charm."
         },{
-            'imgSrc': './assets/fried-chicken.jpg',
-            'headingText': "Gus's Gusto Chicken",
-            'pText': "Our signature fried chicken, inspired by Gus Fring's dedication to perfection. It's a taste you won't forget."
+            'imgSrc': './assets/pizza.jpg',
+            'headingText': "Pinkman's Pizza Pie",
+            'pText': `A pizza with a sprinkle of Jesse's rebellious spirit. Topped with fiery jalapeños and a hint of "Yeah, science!"`
         },{
-            'imgSrc': './assets/fried-chicken.jpg',
-            'headingText': "Gus's Gusto Chicken",
-            'pText': "Our signature fried chicken, inspired by Gus Fring's dedication to perfection. It's a taste you won't forget."
+            'imgSrc': './assets/sundae.jpg',
+            'headingText': "Better Call Salted Caramel Sundae",
+            'pText': "A dessert that'll make you call for more. Salted caramel, ice cream, and a dash of legal mischief."
         }
     ];
 
@@ -50,7 +50,8 @@ export function MenuPage() {
 function createMenuElement(imgSrc, headingText, pText) {
     const menuElement = document.createElement('div');
     menuElement.classList.add(
-        'bg-white','rounded-lg','shadow-lg','flex','flex-row','space-y-8','max-md:flex-col'
+        'bg-white','rounded-lg','shadow-lg','flex','flex-row',
+        'space-y-8','max-md:flex-col','hover:shadow-2xl','hover:scale-105','transition','duration-500','ease-in-out'
     );
 
 
@@ -59,7 +60,7 @@ function createMenuElement(imgSrc, headingText, pText) {
     img.src = imgSrc;
 
     const content = document.createElement('div');
-    content.classList.add('flex','flex-col','space-y-8','w-1/2','max-md:w-full','justify-start','max-md:pb-2','px-2');
+    content.classList.add('flex','flex-col','space-y-14','w-1/2','max-md:w-full','justify-center','items-center','max-md:pb-2','px-2');
 
     const heading = document.createElement('h1');
     heading.classList.add('text-2xl','text-center','font-semibold','mt-2');
